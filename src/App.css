@@ -17,6 +17,7 @@
   --invbr: 2px solid var(--bg);
   --wtbr: 1px solid #fff;
   --wbr: 2px solid #fff;
+  color-scheme: light;
 }
 
 body {
@@ -32,6 +33,13 @@ h5,
 h6,
 a {
   color: var(--he);
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+  border: 0;
 }
 
 i.sm {
@@ -103,11 +111,184 @@ i.lg {
   color: var(--he);
 }
 
+.sign {
+  padding: 18px 22px;
+  max-width: 678px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sign .con-upOrIn {
+  position: relative;
+  margin: 18px auto;
+  background: var(--sgray);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.sign .con-upOrIn input {
+  display: none;
+}
+
+.sign .con-upOrIn span {
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.sign .con-upOrIn .bgon {
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  background: var(--pco);
+  width: calc(50% - 6px);
+  height: calc(100% - 12px);
+  border-radius: 6px;
+  z-index: -1;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.sign .con-upOrIn input:checked ~ span {
+  color: var(--he);
+}
+
+.sign .con-upOrIn label {
+  display: inline-block;
+  padding: 8px 18px;
+}
+
+.sign form {
+  width: calc(100% - 10px + 2vw);
+}
+
+.sign .form-input {
+  width: 100%;
+  text-align: left;
+}
+
+.sign .form-input .second {
+  display: none;
+}
+
+.sign .form-input input {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 6px 8px;
+  background: var(--sgray);
+  color: var(--he);
+  border: 1.5px solid var(--sgray);
+  border-radius: 8px;
+  outline: #0000 solid 2px;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.sign .form-input input:focus {
+  outline: var(--pco) solid 2px;
+}
+
+.sign .form-input label {
+  display: inline-block;
+  margin-left: 8px;
+  margin-top: 22px;
+  margin-bottom: 3px;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.sign .form-input button,
+.sign .form-input .next {
+  display: inline-block;
+  padding: 12px 32px;
+  margin-top: 22px;
+  background: var(--pco);
+  color: var(--he);
+  border-radius: 12px;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.sign .form-input button:disabled,
+.sign .form-input .next:disabled {
+  background: var(--sgray);
+  color: var(--co);
+  cursor: default;
+}
+
+.sign .form-input .next[disabled] {
+  background: var(--sgray);
+  color: var(--co);
+  cursor: default;
+}
+
+.sign .form-input input[contenttype="password"] {
+  width: calc(100% - 41px);
+}
+
+.sign .form-input .viewPass {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 34px;
+  margin: 0 0 0 4px;
+  -webkit-transform: translate(0, 2px);
+          transform: translate(0, 2px);
+  padding: 0;
+  height: 34px;
+  border: 1.5px solid var(--sgray);
+  border-radius: 8px;
+  color: var(--co);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: var(--sgray);
+  cursor: pointer;
+  -webkit-transition: 300ms ease;
+  transition: 300ms ease;
+}
+
+.sign .form-input .viewPass.on {
+  background: var(--pco);
+  color: var(--he);
+}
+
+.sign .form-input .undo {
+  display: inline-block;
+  padding: 12px 32px;
+  margin-top: 22px;
+  background: #0000;
+  cursor: pointer;
+  color: var(--co);
+}
+
 @media screen and (prefers-color-scheme: dark) {
   :root {
     --bg: var(--darkbg);
     --co: var(--darkco);
     --he: var(--darkhe);
+    color-scheme: dark;
   }
 }
 /*# sourceMappingURL=App.css.map */

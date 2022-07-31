@@ -17,6 +17,7 @@
     --invbr: 2px solid var(--bg);
     --wtbr: 1px solid #fff;
     --wbr: 2px solid #fff;
+    color-scheme: light;
 }
 body {
     color: var(--co);
@@ -30,6 +31,12 @@ h5,
 h6,
 a {
     color: var(--he);
+}
+button,
+input {
+    font: inherit;
+    color: inherit;
+    border: 0;
 }
 i.sm {
     font-size: 18px;
@@ -79,11 +86,138 @@ i.lg {
         }
     }
 }
+.sign {
+    padding: 18px 22px;
+    max-width: 678px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    .con-upOrIn {
+        position: relative;
+        margin: 18px auto;
+        background: var(--sgray);
+        width: fit-content;
+        padding: 6px;
+        border-radius: 8px;
+        input {
+            display: none;
+        }
+        span {
+            transition: 300ms;
+        }
+        .bgon {
+            position: absolute;
+            top: 50%;
+            left: 6px;
+            transform: translate(0, -50%);
+            background: var(--pco);
+            width: calc(50% - 6px);
+            height: calc(100% - 12px);
+            border-radius: 6px;
+            z-index: -1;
+            transition: 300ms;
+        }
+        input:checked ~ span {
+            color: var(--he);
+        }
+        label {
+            display: inline-block;
+            padding: 8px 18px;
+        }
+    }
+    form {
+        width: calc(100% - 10px + 2vw);
+    }
+    .form-input {
+        width: 100%;
+        text-align: left;
+        .second {
+            display: none;
+        }
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 6px 8px;
+            background: var(--sgray);
+            color: var(--he);
+            border: 1.5px solid var(--sgray);
+            border-radius: 8px;
+            outline: #0000 solid 2px;
+            transition: 300ms;
+        }
+        input:focus {
+            outline: var(--pco) solid 2px;
+        }
+        label {
+            display: inline-block;
+            margin-left: 8px;
+            margin-top: 22px;
+            margin-bottom: 3px;
+            transition: 300ms;
+        }
+        button,
+        .next {
+            display: inline-block;
+            padding: 12px 32px;
+            margin-top: 22px;
+            background: var(--pco);
+            color: var(--he);
+            border-radius: 12px;
+            transition: 300ms;
+            cursor: pointer;
+            &:disabled {
+                background: var(--sgray);
+                color: var(--co);
+                cursor: default;
+            }
+        }
+        .next[disabled] {
+            background: var(--sgray);
+            color: var(--co);
+            cursor: default;
+        }
+        input[contenttype="password"] {
+            width: calc(100% - 41px);
+        }
+        .viewPass {
+            display: inline-flex;
+            width: 34px;
+            margin: 0 0 0 4px;
+            transform: translate(0, 2px);
+            padding: 0;
+            height: 34px;
+            border: 1.5px solid var(--sgray);
+            border-radius: 8px;
+            color: var(--co);
+            align-items: center;
+            justify-content: center;
+            background: var(--sgray);
+            cursor: pointer;
+            transition: 300ms ease;
+            &.on {
+                background: var(--pco);
+                color: var(--he);
+            }
+        }
+        .undo {
+            display: inline-block;
+            padding: 12px 32px;
+            margin-top: 22px;
+            background: #0000;
+            cursor: pointer;
+            color: var(--co);
+        }
+    }
+}
 
 @media screen and (prefers-color-scheme: dark) {
     :root {
         --bg: var(--darkbg);
         --co: var(--darkco);
         --he: var(--darkhe);
+        color-scheme: dark;
     }
 }

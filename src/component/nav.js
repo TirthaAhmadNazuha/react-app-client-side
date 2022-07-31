@@ -1,13 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 const Nav = () => {
-    const inter = setInterval(() => {
-        if (document.querySelector('.navbar') !== null) {
-            clearInterval(inter)
-            fun()
-        }
-    }, 0)
-    const fun = () => {
+    useEffect(() => {
+        if (window.location.href === window.location.origin + '/sign') {
+            document.querySelector('.navbar').style.display = 'none'
+        } else document.querySelector('.navbar').style.display = 'flex'
         const links = document.querySelectorAll('.navbar .navbar-link')
         links.forEach(link => {
             link.addEventListener('click', () => {
@@ -16,8 +13,8 @@ const Nav = () => {
                 }
                 link.classList.add('on')
             })
-        });
-    }
+        })
+    })
     return (
         <nav className='navbar'>
             <Link to='/' className='navbar-link home on'>
@@ -42,7 +39,7 @@ const Nav = () => {
                 <i className='material-symbols-rounded md'>
                     account_circle
                 </i>
-                <h6>Me</h6>
+                <h6>Saya</h6>
             </Link>
         </nav>
     )

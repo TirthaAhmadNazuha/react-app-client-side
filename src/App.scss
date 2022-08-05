@@ -212,6 +212,9 @@ i.lg {
         }
     }
 }
+#myCanvas {
+    background: var(--sgray);
+}
 
 @media screen and (prefers-color-scheme: dark) {
     :root {

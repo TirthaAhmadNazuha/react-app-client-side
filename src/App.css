@@ -283,6 +283,10 @@ i.lg {
   color: var(--co);
 }
 
+#myCanvas {
+  background: var(--sgray);
+}
+
 @media screen and (prefers-color-scheme: dark) {
   :root {
     --bg: var(--darkbg);

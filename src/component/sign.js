@@ -73,7 +73,7 @@ const Sign = () => {
                 const username = document.querySelector('.sign #inputUsername').value
                 const email = document.querySelector('.sign #inputEmail').value
                 const password = document.querySelector('.sign #inputPassword').value
-                FunLocalStorage.set('kamu', JSON.stringify({ id, name, username, email }))
+                FunLocalStorage.set('kamu', JSON.stringify({ id, name, username, email, readySetImgProfile: true }))
                 fetch('../../signup', {
                     method: 'post',
                     headers: { 'Content-Type': 'application/json' },

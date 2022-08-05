@@ -2,10 +2,18 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 const Nav = () => {
     useEffect(() => {
+        const links = document.querySelectorAll('.navbar .navbar-link')
         if (window.location.href === window.location.origin + '/sign') {
             document.querySelector('.navbar').style.display = 'none'
         } else document.querySelector('.navbar').style.display = 'flex'
-        const links = document.querySelectorAll('.navbar .navbar-link')
+        if (window.location.href !== window.location.origin + '/') {
+            for (const li of links) {
+                li.classList.remove('on')
+                if (li.getAttribute('href') === window.location.pathname) {
+                    li.classList.add('on')
+                }
+            }
+        }
         links.forEach(link => {
             link.addEventListener('click', () => {
                 for (const li of links) {

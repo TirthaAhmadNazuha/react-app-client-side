@@ -74,7 +74,7 @@ const Sign = () => {
                 const email = document.querySelector('.sign #inputEmail').value
                 const password = document.querySelector('.sign #inputPassword').value
                 FunLocalStorage.set('kamu', JSON.stringify({ id, name, username, email, readySetImgProfile: true }))
-                fetch('../../signup', {
+                fetch('https://my-nodejs-server-for-my-react.herokuapp.com/signup', {
                     method: 'post',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ id, name, username, email, password, date })
@@ -82,7 +82,7 @@ const Sign = () => {
             } else {
                 const username = document.querySelector('.sign #login-inputUsername').value
                 const password = document.querySelector('.sign #login-inputPassword').value
-                fetch('../../login', {
+                fetch('https://my-nodejs-server-for-my-react.herokuapp.com/login', {
                     method: 'post',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ username, password })

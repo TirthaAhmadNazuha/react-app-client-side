@@ -2,12 +2,15 @@ import React from "react"
 // import FunLocalStorage from "../function/localstorage"
 
 const Home = () => {
-    // const openLocalStorage = () => {
-    //     const dataInLS = FunLocalStorage.get('kamu')
-    //     if (dataInLS.readySetImgProfile) {
-
-    //     }
-    // }
+    try {
+        if (window.localStorage) {
+            if (window.localStorage.length === 0) {
+                window.open('/sign')
+            }
+        } else console.warn('browser is not support localStorage or Error')
+    } catch (err) {
+        console.error('Try in home page is Error ', err)
+    }
     // const ifReadySetImgProfileComponent = () => {
     //     return (
     //         <div className="set-img-profile">

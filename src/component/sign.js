@@ -78,7 +78,7 @@ const Sign = () => {
                     method: 'post',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ id, name, username, email, password, date })
-                }).then(res => res.json()).catch(err => console.log('Fetch in handleSubmit Error :', err))
+                }).then(res => res.json()).then(data => console.log(data)).catch(err => console.log('Fetch in handleSubmit Error :', err))
             } else {
                 const username = document.querySelector('.sign #login-inputUsername').value
                 const password = document.querySelector('.sign #login-inputPassword').value
